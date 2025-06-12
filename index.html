@@ -1,71 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home - Inner Compass Academy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inner Compass Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f8f7;
-      color: #333;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
+
+    body {
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      color: #333;
+      padding-top: 80px;
+    }
+
     header {
-      background-color: #4f9da6;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 28px;
-      letter-spacing: 1px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffffdd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-    nav {
-      background-color: #397f86;
-      text-align: center;
-      padding: 12px 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
+
+    .logo {
+      display: flex;
+      align-items: center;
       font-weight: bold;
+      font-size: 24px;
+      color: #4a6572;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .logo i {
+      margin-right: 10px;
+      color: #6c63ff;
     }
-    .content {
-      padding: 30px;
-      max-width: 900px;
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4a6572;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #6c63ff;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .cta-btn {
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #5a54e8;
+    }
+
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
       margin: auto;
     }
-    h1 {
-      color: #2e6d73;
+
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #4a6572;
     }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
     footer {
-      background: #4f9da6;
+      background-color: #4a6572;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 50px;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <header>Inner Compass Academy</header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="programs.html">Programs</a>
-    <a href="blog.html">Blog</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="content">
-    <h1>Welcome to Inner Compass Academy</h1>
-    <p>Empowering self-discovery, healing, and mental well-being through research and education.</p>
-    <p>Explore our programs and resources to begin your journey inward.</p>
-  </div>
+  <header>
+    <div class="logo"><i class="fas fa-compass"></i>Inner Compass Academy</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>Heal, Grow, Thrive</h1>
+    <p>Your inner journey to peace and purpose begins here.</p>
+    <a href="programs.html"><button class="cta-btn">Explore Programs</button></a>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2>Welcome to Inner Compass Academy</h2>
+    <div class="card">
+      <p>We provide evidence-based workshops, personal growth tools, and a supportive community to guide you on your journey inward. Discover, reflect, and heal with us.</p>
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Inner Compass Academy · All rights reserved.
+    <p>&copy; 2025 Inner Compass Academy. All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
 </body>
 </html>
