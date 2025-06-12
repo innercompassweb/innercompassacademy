@@ -1,71 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About Us - Inner Compass Academy</title>
+  <meta charset="UTF-8" />
+  <title>About - Inner Compass Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f8f7;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    body { background: #f6f8fa; padding-top: 80px; color: #333; }
     header {
-      background-color: #4f9da6;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 28px;
-      letter-spacing: 1px;
+      position: fixed; top: 0; width: 100%; background: #ffffffcc;
+      backdrop-filter: blur(10px); display: flex; justify-content: space-between;
+      align-items: center; padding: 20px 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      z-index: 999;
     }
-    nav {
-      background-color: #397f86;
-      text-align: center;
-      padding: 12px 0;
-    }
+    .logo { font-weight: bold; font-size: 24px; color: #4a6572; display: flex; align-items: center; }
+    .logo i { margin-right: 10px; color: #6c63ff; }
+    nav ul { display: flex; gap: 20px; list-style: none; }
     nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
+      text-decoration: none; color: #4a6572; font-weight: 500; position: relative;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; height: 2px;
+      width: 0%; background-color: #6c63ff; transition: 0.3s ease;
     }
-    .content {
-      padding: 30px;
+    nav a:hover::after { width: 100%; }
+    main {
+      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
-    h1 {
-      color: #2e6d73;
+    h1 { font-size: 36px; margin-bottom: 20px; color: #444; }
+    p { font-size: 18px; line-height: 1.6; margin-bottom: 20px; }
+    .team-section {
+      margin-top: 40px;
+      display: flex; flex-wrap: wrap; gap: 20px;
     }
-    footer {
-      background: #4f9da6;
-      color: white;
-      text-align: center;
+    .team-card {
+      flex: 1 1 250px;
+      background: white;
+      border-radius: 12px;
       padding: 20px;
-      margin-top: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .team-card h3 { margin-top: 10px; font-size: 20px; }
+    .team-card p { font-size: 14px; color: #555; }
+    footer {
+      margin-top: 60px; text-align: center; padding: 30px; background-color: #4a6572;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header>Inner Compass Academy</header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="programs.html">Programs</a>
-    <a href="blog.html">Blog</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="content">
+  <header>
+    <div class="logo"><i class="fas fa-compass"></i>Inner Compass Academy</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main data-aos="fade-up">
     <h1>About Us</h1>
-    <p>Inner Compass Academy was born from a desire to help people reconnect with their inner wisdom.</p>
-    <p>We offer education, support, and community for those on a path of psychological healing and growth.</p>
-  </div>
+    <p>
+      Inner Compass Academy was founded with a vision to support inner growth, healing, and transformation through evidence-based psychology and compassionate guidance.
+    </p>
+    <p>
+      Our mission is to provide accessible tools, training, and support for individuals on a journey toward emotional well-being, self-awareness, and resilience.
+    </p>
+
+    <div class="team-section" data-aos="fade-up">
+      <div class="team-card">
+        <h3>Dr. Maya R.</h3>
+        <p>Psychologist & Founder<br />"Every mind deserves to be understood."</p>
+      </div>
+      <div class="team-card">
+        <h3>Arjun K.</h3>
+        <p>Mindfulness Coach<br />"Growth starts with presence."</p>
+      </div>
+    </div>
+  </main>
+
   <footer>
-    &copy; 2025 Inner Compass Academy · All rights reserved.
+    <p>&copy; 2025 Inner Compass Academy. All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
