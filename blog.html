@@ -1,76 +1,86 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Blog - Inner Compass Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f0f8f7;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: #4f9da6;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 28px;
-    letter-spacing: 1px;
-  }
-  nav {
-    background-color: #397f86;
-    text-align: center;
-    padding: 12px 0;
-  }
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
-  .content {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
-  }
-  h1 {
-    color: #2e6d73;
-  }
-  footer {
-    background: #4f9da6;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-  }
-</style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    body { background: #f4f9fb; padding-top: 80px; color: #333; }
+    header {
+      position: fixed; top: 0; width: 100%; background: #ffffffcc;
+      backdrop-filter: blur(10px); display: flex; justify-content: space-between;
+      align-items: center; padding: 20px 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      z-index: 999;
+    }
+    .logo { font-weight: bold; font-size: 24px; color: #4a6572; display: flex; align-items: center; }
+    .logo i { margin-right: 10px; color: #6c63ff; }
+    nav ul { display: flex; gap: 20px; list-style: none; }
+    nav a {
+      text-decoration: none; color: #4a6572; font-weight: 500; position: relative;
+    }
+    nav a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; height: 2px;
+      width: 0%; background-color: #6c63ff; transition: 0.3s ease;
+    }
+    nav a:hover::after { width: 100%; }
+    main {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 { font-size: 36px; margin-bottom: 20px; color: #444; text-align: center; }
+    .blog-post {
+      background: white; border-radius: 12px;
+      padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+    .blog-post h3 { margin-bottom: 10px; color: #333; }
+    .blog-post p { font-size: 16px; color: #555; line-height: 1.5; }
+    footer {
+      margin-top: 60px; text-align: center; padding: 30px; background-color: #4a6572;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <header>Inner Compass Academy</header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="programs.html">Programs</a>
-    <a href="blog.html">Blog</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="content">
-    
-<h1>Blog & Articles</h1>
-<p>Explore short insights and reflections on healing, psychology, and self-growth.</p>
-<h2>✨ The Power of Self-Awareness</h2>
-<p>Self-awareness is the foundation of healing. When you pause and reflect, you begin to shift.</p>
-<h2>🧘 Daily Grounding Practices</h2>
-<p>Breathwork, mindful journaling, and intentional solitude help bring calm and clarity to your day.</p>
-
-  </div>
+  <header>
+    <div class="logo"><i class="fas fa-compass"></i>Inner Compass Academy</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main data-aos="fade-up">
+    <h1>Blog & Insights</h1>
+    <div class="blog-post">
+      <h3>🧠 Understanding the Inner Child</h3>
+      <p>Learn about how inner child work can help heal emotional wounds and reconnect with your authentic self.</p>
+    </div>
+    <div class="blog-post">
+      <h3>💬 Simple Mindfulness Practices</h3>
+      <p>Try easy daily mindfulness techniques to reduce stress and enhance emotional awareness.</p>
+    </div>
+    <div class="blog-post">
+      <h3>📘 Why Self-Reflection Matters</h3>
+      <p>Explore how self-reflection contributes to personal growth, emotional clarity, and improved relationships.</p>
+    </div>
+  </main>
   <footer>
-    &copy; 2025 Inner Compass Academy · All rights reserved.
+    <p>&copy; 2025 Inner Compass Academy. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
+
