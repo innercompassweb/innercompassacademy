@@ -382,6 +382,105 @@
       background-color: #000;
       color: #fff;
     }
+    .why-inner-compass {
+      background: #f7faff;
+      padding: 60px 20px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .why-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .why-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .why-left .why-icon {
+      width: 60px;
+      height: 60px;
+      background: #173654;
+      color: #d38183;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .why-left h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .why-left p {
+      font-size: 14.5px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .why-divider {
+      width: 1px;
+      background-color: #ccc;
+      height: auto;
+      margin: 0 20px;
+    }
+
+    .why-right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .why-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .icon-wrap {
+      background-color: #dde2e5;
+      color: #ed3d3d;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .why-feature h4 {
+      font-size: 15.5px;
+      margin: 0 0 5px;
+      color: #222;
+    }
+
+    .why-feature p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .why-container {
+        flex-direction: column;
+      }
+
+      .why-divider {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -462,17 +561,62 @@
     </div>
   </section>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Why Choose Inner Compass?</h2>
-    <div class="cards">
-      <div class="card"><i class="fas fa-user-shield"></i>
-        <h4>Confidential & Secure</h4>
+  <section class="why-inner-compass">
+    <div class="why-container">
+      <!-- Left Section -->
+      <div class="why-left">
+        <div class="why-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>Inner Compass Academy offers</h3>
+        <p>
+          At Inner Compass Academy, we bring together India's most dedicated therapists and mental wellness
+          professionals.
+          Whether you're seeking clarity, emotional balance, or simply someone to talk to — we’re here to support your
+          journey.
+        </p>
       </div>
-      <div class="card"><i class="fas fa-user-md"></i>
-        <h4>Qualified Psychologists</h4>
-      </div>
-      <div class="card"><i class="fas fa-clock"></i>
-        <h4>Flexible Scheduling</h4>
+
+      <!-- Divider Line -->
+      <div class="why-divider"></div>
+
+      <!-- Right Section -->
+      <div class="why-right">
+        <div class="why-feature">
+          <div class="icon-wrap"><i class="fas fa-user-md"></i></div>
+          <div>
+            <h4>Expert Psychologists</h4>
+            <p>Connect with qualified, compassionate professionals who understand your needs deeply.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="icon-wrap"><i class="fas fa-user-shield"></i></div>
+          <div>
+            <h4>Confidential Conversations</h4>
+            <p>Everything shared in sessions stays private between you and your therapist—always.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="icon-wrap"><i class="fas fa-wallet"></i></div>
+          <div>
+            <h4>Budget-Friendly</h4>
+            <p>We believe therapy should be accessible—our pricing is fair and flexible for everyone.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="icon-wrap"><i class="fas fa-user-secret"></i></div>
+          <div>
+            <h4>Full Privacy</h4>
+            <p>Your identity and personal details are protected at every step—no exceptions.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="icon-wrap"><i class="fas fa-headset"></i></div>
+          <div>
+            <h4>Multiple Access Options</h4>
+            <p>Choose what suits you—chat, audio, or video therapy from the comfort of your home.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
