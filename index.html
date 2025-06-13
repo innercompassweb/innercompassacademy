@@ -84,6 +84,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
+      animation: zoomIn 5s ease-in-out;
     }
 
     .slide img {
@@ -95,7 +96,6 @@
 
     .slide.active {
       display: block;
-      animation: fade 1s ease-in-out;
     }
 
     .caption {
@@ -127,28 +127,68 @@
     button.prev { left: 20px; }
     button.next { right: 20px; }
 
-    @keyframes fade {
-      from {opacity: 0.4}
-      to {opacity: 1}
+    @keyframes zoomIn {
+      from { transform: scale(1.1); opacity: 0.6; }
+      to { transform: scale(1); opacity: 1; }
     }
 
-    section.intro {
+    section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #444;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
       text-align: center;
     }
 
-    section.intro h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #444;
+    .card:hover {
+      transform: translateY(-10px);
     }
 
-    section.intro p {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.6;
+    .card i {
+      font-size: 32px;
+      color: #6c63ff;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #6c63ff;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #4a46d4;
     }
 
     footer {
@@ -178,15 +218,15 @@
   <section class="hero-slider">
     <div class="slider">
       <div class="slide active">
-        <img src="images/slide2.jpg" alt="Therapy">
+        <img src="assets/slide1.jpg" alt="Slide 1">
         <div class="caption">"Healing begins with awareness."</div>
       </div>
       <div class="slide">
-        <img src="images/slide4.jpg" alt="Mindfulness">
+        <img src="assets/slide2.jpg" alt="Slide 2">
         <div class="caption">"Growth is an inward journey."</div>
       </div>
       <div class="slide">
-        <img src="images/slide5.jpg" alt="Growth">
+        <img src="assets/slide3.jpg" alt="Slide 3">
         <div class="caption">"Clarity comes from stillness."</div>
       </div>
       <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -194,11 +234,35 @@
     </div>
   </section>
 
-  <section class="intro" data-aos="fade-up">
-    <h2>Welcome to Inner Compass Academy</h2>
-    <p>
-      A nurturing space for self-awareness, healing, and personal growth. We offer programs, resources, and community support guided by psychology, mindfulness, and compassion.
-    </p>
+  <section data-aos="fade-up">
+    <h2 class="section-title">Areas We Help With</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-heartbeat"></i><h4>Anxiety & Stress</h4></div>
+      <div class="card"><i class="fas fa-user-friends"></i><h4>Relationships</h4></div>
+      <div class="card"><i class="fas fa-child"></i><h4>Child Behavior</h4></div>
+      <div class="card"><i class="fas fa-brain"></i><h4>Depression</h4></div>
+    </div>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title">Our Popular Workshops</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-chalkboard-teacher"></i><h4>Mindfulness Bootcamp</h4></div>
+      <div class="card"><i class="fas fa-users"></i><h4>Parenting Circles</h4></div>
+      <div class="card"><i class="fas fa-headset"></i><h4>Online Therapy 1:1</h4></div>
+    </div>
+    <div style="text-align:center">
+      <a href="programs.html" class="cta-button">Explore Programs</a>
+    </div>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title">Why Choose Inner Compass?</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-user-shield"></i><h4>Confidential & Secure</h4></div>
+      <div class="card"><i class="fas fa-user-md"></i><h4>Qualified Psychologists</h4></div>
+      <div class="card"><i class="fas fa-clock"></i><h4>Flexible Scheduling</h4></div>
+    </div>
   </section>
 
   <footer>
@@ -226,7 +290,7 @@
 
     setInterval(() => {
       changeSlide(1);
-    }, 5000); // auto change every 5s
+    }, 5000);
 
     showSlide(slideIndex);
   </script>
