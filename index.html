@@ -16,92 +16,115 @@
       margin: 0;
       padding: 0;
     }
-    .hero-dynamic {
+    .hero-modern {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #f5f8fa;
   position: relative;
-  height: 90vh;
   overflow: hidden;
 }
 
-.hero-bg {
-  background: url('images/slide2.jpg') center/cover no-repeat;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  filter: brightness(0.6);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
+.hero-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-.hero-line {
-  font-size: 2.5rem;
-  margin: 0.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlide 1s forwards ease-out;
+.hero-text {
+  flex: 1;
+  padding-right: 50px;
+  animation: slideLeft 1s ease-out forwards;
 }
 
-.hero-line.delay-1 {
-  animation-delay: 1s;
+.hero-text .headline {
+  font-size: 2.8rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.hero-line.delay-2 {
-  animation-delay: 2s;
+.hero-text .subhead {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
 }
 
-@keyframes fadeSlide {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  margin-top: 2rem;
-  opacity: 0;
-  animation: fadeSlide 1s forwards ease-out;
-  animation-delay: 3s;
-}
-
-.btn-primary,
-.btn-secondary {
+.hero-buttons .btn {
   padding: 12px 24px;
-  border-radius: 30px;
   font-size: 1rem;
+  border-radius: 30px;
+  margin-right: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .btn-primary {
-  background: #6c63ff;
+  background-color: #007acc;
   color: white;
   border: none;
 }
 
 .btn-primary:hover {
-  background: #5752cc;
+  background-color: #005999;
 }
 
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
+.btn-outline {
+  background-color: transparent;
+  color: #007acc;
+  border: 2px solid #007acc;
 }
 
-.btn-secondary:hover {
-  background: #ffffff20;
+.btn-outline:hover {
+  background-color: #e6f3fc;
 }
+
+/* Swiper container */
+.hero-images {
+  flex: 1;
+  max-width: 600px;
+  height: 500px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 2s ease forwards;
+}
+
+.hero-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes slideLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+ 
 
     body {
       background: #f9fbfc;
@@ -733,18 +756,32 @@
     </nav>
   </header>
 
-  <section class="hero-dynamic">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <h1 class="hero-line">Healing begins with awareness.</h1>
-    <h1 class="hero-line delay-1">Growth is an inward journey.</h1>
-    <h1 class="hero-line delay-2">Clarity comes from stillness.</h1>
-    <div class="hero-buttons">
-      <button class="btn-primary">Meet Our Experts</button>
-      <button class="btn-secondary">Book an Appointment</button>
+  <section class="hero-modern">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1 class="headline">Your Journey to Mental Wellness Begins Here</h1>
+      <p class="subhead">India's trusted online mental health counselling platform</p>
+      <div class="hero-buttons">
+        <a href="#experts" class="btn btn-primary">Meet Our Experts</a>
+        <a href="#appointment" class="btn btn-outline">Book an Appointment</a>
+      </div>
+    </div>
+    <div class="hero-images swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/hero1.jpg" alt="Therapy Session">
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero2.jpg" alt="Online Support">
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero3.jpg" alt="Counselling Help">
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 
   <section data-aos="fade-up">
