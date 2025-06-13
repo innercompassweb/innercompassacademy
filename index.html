@@ -482,6 +482,152 @@
         display: none;
       }
     }
+    .popular-workshops {
+      padding: 60px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto 30px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .read-more-btn {
+      border: 1px solid #007acc;
+      background: transparent;
+      color: #007acc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .swiper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+
+    .workshop-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: left;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .workshop-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .workshop-card h4 {
+      font-size: 17px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .workshop-card p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .explore-btn {
+      display: inline-block;
+      font-size: 13px;
+      color: #007acc;
+      border: 1px solid #007acc;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .explore-btn:hover {
+      background-color: #007acc;
+      color: #fff;
+    }
+
+    /* Card Color Themes */
+    .pink {
+      background: #ffe6ee;
+    }
+
+    .green {
+      background: #e9fbe4;
+    }
+
+    .violet {
+      background: #f3ecff;
+    }
+
+    .yellow {
+      background: #fff3df;
+    }
+
+    .lightblue {
+      background: #e8f5ff;
+    }
+
+    .lightgreen {
+      background: #e8ffe8;
+    }
+
+    .lightpurple {
+      background: #f4e8ff;
+    }
+
+    .peach {
+      background: #fff0e8;
+    }
+
+
+    .swiper-pagination {
+      margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .workshop-card img {
+        height: 100px;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #444;
+      /* Or your theme color */
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+      background: #eee;
+    }
   </style>
 </head>
 
@@ -537,24 +683,75 @@
     </div>
   </section>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Our Popular Workshops</h2>
-    <div class="cards">
-      <div class="card"><i class="fas fa-chalkboard-teacher"></i>
-        <h4>Mindfulness Bootcamp</h4>
+  <section class="popular-workshops">
+    <div class="section-header">
+      <h2>Our Popular Workshops</h2>
+      <button class="read-more-btn">Read More</button>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Repeat these workshop-card blocks -->
+        <div class="swiper-slide workshop-card pink">
+          <img src="images/couples.png" alt="Couples Counselling">
+          <h4>Couples</h4>
+          <p>Effective counselling for relationships—marriage, breakup, affection issues.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card green">
+          <img src="images/grief.png" alt="Grief Counselling">
+          <h4>Grief</h4>
+          <p>Support as you process loss and rebuild life without feeling judged.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card violet">
+          <img src="images/guilt.png" alt="Guilt Counselling">
+          <h4>Guilt</h4>
+          <p>Tools and support for overcoming guilt, low self-esteem, and shame.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card yellow">
+          <img src="images/behavioural.png" alt="Behavioural Counselling">
+          <h4>Behavioural</h4>
+          <p>Improve destructive behavioral patterns in children and adults.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card lightblue">
+          <img src="images/adhd.png" alt="ADHD Counselling">
+          <h4>ADHD</h4>
+          <p>Strategies and support for managing attention and focus challenges.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card lightgreen">
+          <img src="images/stress-management.png" alt="Stress Management">
+          <h4>Stress Management</h4>
+          <p>Techniques to cope with daily stress and enhance well-being.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card lightpurple">
+          <img src="images/anger-management.png" alt="Anger Management">
+          <h4>Anger Management</h4>
+          <p>Guidance to manage strong emotions and promote inner calm.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
+
+        <div class="swiper-slide workshop-card peach">
+          <img src="images/pre-marriage.png" alt="Pre Marriage Counselling">
+          <h4>Pre‑Marriage</h4>
+          <p>Prepare for a successful marriage with communication and compatibility insights.</p>
+          <a href="#" class="explore-btn">Explore More</a>
+        </div>
       </div>
-<!--       <div class="card"><i class="fas fa-users"></i>
-        <h4>Parenting Circles</h4>
-      </div> -->
-      <div class="card"><i class="fas fa-users"></i>
-        <h4>Group Sessions</h4>
-      </div>
-      <div class="card"><i class="fas fa-headset"></i>
-        <h4>Online Therapy 1:1</h4>
-      </div>
-      <div class="card"><i class="fas fa-headset"></i>
-        <h4>Mental Health Education</h4>
-      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
     </div>
     <div style="text-align:center;margin-top: 30px;">
       <a href="#" class="cta-button" onclick="document.getElementById('bookModal').style.display='flex'">Book a
@@ -719,6 +916,31 @@
     }, 5000);
 
     showSlide(slideIndex);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true, // Enables continuous loop mode
+      autoplay: {
+        delay: 3500, // Change slide every 3.5 seconds
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        900: { slidesPerView: 3 },
+        1200: { slidesPerView: 4 }
+      }
+    });
   </script>
 </body>
 
