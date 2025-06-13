@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Inner Compass Academy</title>
@@ -8,8 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <style>
-    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
-    body { background: #f9fbfc; color: #333; }
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f9fbfc;
+      color: #333;
+    }
 
     header {
       position: fixed;
@@ -21,7 +31,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       z-index: 999;
     }
 
@@ -114,7 +124,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.4);
       color: white;
       border: none;
       font-size: 24px;
@@ -124,12 +134,24 @@
       z-index: 10;
     }
 
-    button.prev { left: 20px; }
-    button.next { right: 20px; }
+    button.prev {
+      left: 20px;
+    }
+
+    button.next {
+      right: 20px;
+    }
 
     @keyframes zoomIn {
-      from { transform: scale(1.1); opacity: 0.6; }
-      to { transform: scale(1); opacity: 1; }
+      from {
+        transform: scale(1.1);
+        opacity: 0.6;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     section {
@@ -155,7 +177,7 @@
       background: white;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
       text-align: center;
     }
@@ -193,11 +215,14 @@
 
     .modal {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: none;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1000;
     }
 
@@ -246,8 +271,15 @@
     }
 
     @keyframes fadeIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     footer {
@@ -257,8 +289,102 @@
       background-color: #4a6572;
       color: white;
     }
+
+    /* Services Section */
+    .services-section {
+      background: #f9fcff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .service-card a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #f0f8ff;
+      color: #007bff;
+      font-weight: 500;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      border: 1px solid #d4ecff;
+    }
+
+    .service-card a:hover {
+      background-color: #e0f0ff;
+    }
+
+    .services-section .bottom-note {
+      font-size: 14px;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .services-section .cta-button {
+      font-size: 16px;
+      background-color: #b35a5a;
+      border: 2px solid #000;
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .services-section .cta-button:hover {
+      background-color: #000;
+      color: #fff;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo"><i class="fas fa-compass"></i>Inner Compass Academy</div>
@@ -296,33 +422,111 @@
   <section data-aos="fade-up">
     <h2 class="section-title">Areas We Help With</h2>
     <div class="cards">
-      <div class="card"><i class="fas fa-heartbeat"></i><h4>Anxiety & Stress</h4></div>
-      <div class="card"><i class="fas fa-user-friends"></i><h4>Relationships</h4></div>
-      <div class="card"><i class="fas fa-child"></i><h4>Child Behavior</h4></div>
-      <div class="card"><i class="fas fa-brain"></i><h4>Depression</h4></div>
+      <div class="card"><i class="fas fa-heartbeat"></i>
+        <h4>Anxiety & Stress</h4>
+      </div>
+      <div class="card"><i class="fas fa-user-friends"></i>
+        <h4>Relationships</h4>
+      </div>
+      <div class="card"><i class="fas fa-child"></i>
+        <h4>Child Behavior</h4>
+      </div>
+      <div class="card"><i class="fas fa-brain"></i>
+        <h4>Depression</h4>
+      </div>
     </div>
   </section>
 
   <section data-aos="fade-up">
     <h2 class="section-title">Our Popular Workshops</h2>
     <div class="cards">
-      <div class="card"><i class="fas fa-chalkboard-teacher"></i><h4>Mindfulness Bootcamp</h4></div>
-      <div class="card"><i class="fas fa-users"></i><h4>Parenting Circles</h4></div>
-      <div class="card"><i class="fas fa-headset"></i><h4>Online Therapy 1:1</h4></div>
+      <div class="card"><i class="fas fa-chalkboard-teacher"></i>
+        <h4>Mindfulness Bootcamp</h4>
+      </div>
+      <div class="card"><i class="fas fa-users"></i>
+        <h4>Parenting Circles</h4>
+      </div>
+      <div class="card"><i class="fas fa-headset"></i>
+        <h4>Online Therapy 1:1</h4>
+      </div>
     </div>
     <div style="text-align:center">
-      <a href="#" class="cta-button" onclick="document.getElementById('bookModal').style.display='flex'">Book a Session</a>
+      <a href="#" class="cta-button" onclick="document.getElementById('bookModal').style.display='flex'">Book a
+        Session</a>
     </div>
   </section>
 
   <section data-aos="fade-up">
     <h2 class="section-title">Why Choose Inner Compass?</h2>
     <div class="cards">
-      <div class="card"><i class="fas fa-user-shield"></i><h4>Confidential & Secure</h4></div>
-      <div class="card"><i class="fas fa-user-md"></i><h4>Qualified Psychologists</h4></div>
-      <div class="card"><i class="fas fa-clock"></i><h4>Flexible Scheduling</h4></div>
+      <div class="card"><i class="fas fa-user-shield"></i>
+        <h4>Confidential & Secure</h4>
+      </div>
+      <div class="card"><i class="fas fa-user-md"></i>
+        <h4>Qualified Psychologists</h4>
+      </div>
+      <div class="card"><i class="fas fa-clock"></i>
+        <h4>Flexible Scheduling</h4>
+      </div>
     </div>
   </section>
+  <section class="services-section">
+    <h2>Inner Compass Academy’s Mental Health Experts Can Help You</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img src="images/sleep.png" alt="Sleep Better">
+        <h3>Sleep Better</h3>
+        <p>Discussing your issues with our therapists will help you figure out how to handle them. Hence, you’ll be able
+          to sleep better.</p>
+        <a href="#">Counselling for Sleep</a>
+      </div>
+
+      <div class="service-card">
+        <img src="images/confidence.png" alt="Confidence">
+        <h3>Increase Your Confidence Level</h3>
+        <p>Our counsellors will help you find the confidence you need to grow personally and professionally.</p>
+        <a href="#">Counselling for Confidence</a>
+      </div>
+
+      <div class="service-card">
+        <img src="images/work.png" alt="Work Environment">
+        <h3>Thrive in a Work Environment</h3>
+        <p>Our counsellors can teach you how to navigate and excel in your professional life.</p>
+        <a href="#">Counselling for Work</a>
+      </div>
+
+      <div class="service-card">
+        <img src="images/relationship.png" alt="Healthy Relationships">
+        <h3>Maintain Healthy Relationships</h3>
+        <p>Our therapists are here to help you maintain a happy, fulfilling relationship.</p>
+        <a href="#">Counselling for Relationship</a>
+      </div>
+
+      <div class="service-card">
+        <img src="images/stress.png" alt="COVID Stress">
+        <h3>Manage COVID Stress</h3>
+        <p>Our experts can help keep stress levels under control with guided therapy.</p>
+        <a href="#">Counselling for Stress</a>
+      </div>
+
+      <div class="service-card">
+        <img src="images/thinking.png" alt="Transform Thinking">
+        <h3>Transform Your Thinking</h3>
+        <p>Our therapists can help you deal with negative thoughts and empower a better mindset.</p>
+        <a href="#">Counselling for Thinking</a>
+      </div>
+
+    </div>
+
+    <p class="bottom-note">
+      Inner Compass Academy is your companion in emotional wellness. Our experts are available to support you in
+      managing depression, anxiety, relationship issues, stress, and more — through chat, video, or audio consultations.
+    </p>
+
+    <button class="cta-button">Get started now</button>
+  </section>
+
 
   <div id="bookModal" class="modal">
     <div class="modal-content">
@@ -366,4 +570,5 @@
     showSlide(slideIndex);
   </script>
 </body>
+
 </html>
