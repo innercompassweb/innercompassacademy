@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Inner Compass Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to right, #dfe9f3, #ffffff);
-      color: #333;
-      padding-top: 80px;
-    }
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    body { background: #f9fbfc; color: #333; }
 
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background-color: #ffffffdd;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 50px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      z-index: 999;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
       font-weight: bold;
       font-size: 24px;
       color: #4a6572;
+      display: flex;
+      align-items: center;
     }
 
     .logo i {
@@ -64,10 +54,10 @@
     nav a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -3px;
+      bottom: -4px;
       left: 0;
+      height: 2px;
+      width: 0%;
       background-color: #6c63ff;
       transition: 0.3s ease;
     }
@@ -76,74 +66,97 @@
       width: 100%;
     }
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
+    .hero-slider {
+      margin-top: 80px;
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #333;
+    .slider {
+      position: relative;
+      height: 100%;
     }
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #555;
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
 
-    .cta-btn {
-      padding: 12px 30px;
-      font-size: 18px;
-      background-color: #6c63ff;
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 28px;
+      font-weight: 500;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    button.prev,
+    button.next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
       color: white;
       border: none;
-      border-radius: 8px;
+      font-size: 24px;
+      padding: 10px 15px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      border-radius: 50%;
+      z-index: 10;
     }
 
-    .cta-btn:hover {
-      background-color: #5a54e8;
+    button.prev { left: 20px; }
+    button.next { right: 20px; }
+
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
     }
 
-    section {
-      padding: 60px 40px;
+    section.intro {
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
-    }
-
-    section h2 {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: #4a6572;
     }
 
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-      transition: transform 0.3s ease;
+    section.intro h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #444;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    section.intro p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
     }
 
     footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px;
       background-color: #4a6572;
       color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      margin: 0;
     }
   </style>
 </head>
@@ -162,17 +175,30 @@
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Heal, Grow, Thrive</h1>
-    <p>Your inner journey to peace and purpose begins here.</p>
-    <a href="programs.html"><button class="cta-btn">Explore Programs</button></a>
+  <section class="hero-slider">
+    <div class="slider">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1588776814546-cf1f00a43c35?fit=crop&w=1600&h=600" alt="Therapy">
+        <div class="caption">"Healing begins with awareness."</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?fit=crop&w=1600&h=600" alt="Mindfulness">
+        <div class="caption">"Growth is an inward journey."</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1504457046782-27d6f33f62b3?fit=crop&w=1600&h=600" alt="Growth">
+        <div class="caption">"Clarity comes from stillness."</div>
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
   </section>
 
-  <section data-aos="fade-up">
+  <section class="intro" data-aos="fade-up">
     <h2>Welcome to Inner Compass Academy</h2>
-    <div class="card">
-      <p>We provide evidence-based workshops, personal growth tools, and a supportive community to guide you on your journey inward. Discover, reflect, and heal with us.</p>
-    </div>
+    <p>
+      A nurturing space for self-awareness, healing, and personal growth. We offer programs, resources, and community support guided by psychology, mindfulness, and compassion.
+    </p>
   </section>
 
   <footer>
@@ -182,6 +208,27 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
+
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === n) slide.classList.add("active");
+      });
+    }
+
+    function changeSlide(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000); // auto change every 5s
+
+    showSlide(slideIndex);
   </script>
 </body>
 </html>
