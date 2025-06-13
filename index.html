@@ -766,7 +766,7 @@
         <a href="#appointment" class="btn btn-outline">Book an Appointment</a>
       </div>
     </div>
-    <div class="hero-images swiper mySwiper">
+    <div class="hero-images swiper heroSwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="images/bg1.jpg" alt="Therapy Session">
@@ -1061,6 +1061,17 @@
       }
     });
   </script>
+  <script>
+  var heroSwiper = new Swiper(".heroSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    effect: 'fade',
+    fadeEffect: { crossFade: true }
+  });
+</script>
 </body>
 
 </html>
